@@ -1,0 +1,39 @@
+#include <stdio.h>
+void main()
+{
+  	char str[100], word[10];
+  	int i, j,c;
+ 
+  	gets(str);
+  	
+  	gets(word);
+	     	   	
+  	for(i = 0; str[i] != '\0'; i++)
+	{
+		if(str[i] == word[0])
+		{
+			c = 1;
+			for(j = 0; word[j] != '\0'; j++)
+			{
+				if(str[i + j] != word[j])
+				{
+					c = 0;
+					break;
+				}
+			}	
+		}
+		if(c == 1)
+		{
+			break;
+		} 
+	}
+	if(c == 0)
+  	{
+  		printf("\nword is not found");
+	}
+	else
+	{
+		printf("\n We found '%s' at position %d ", word, i + 1);
+	}	
+	
+}
